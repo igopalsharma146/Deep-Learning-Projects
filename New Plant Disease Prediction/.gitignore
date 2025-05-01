@@ -2,4 +2,4 @@ taking picture from camera
 test
 train
 valid
-venv/   # Ignore the virtual environment folder
+venv/
