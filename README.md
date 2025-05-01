@@ -1,1 +1,1 @@
-AI driven crop disease prediction and management system
+-AI driven crop disease prediction and management system
