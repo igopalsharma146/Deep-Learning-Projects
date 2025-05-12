@@ -2,6 +2,14 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
+col1, col2 = st.columns(2)
+
+with col1:
+    st.image("home_page.jpeg", width=4, use_container_width=True)
+
+with col2:
+    st.markdown("## Welcome to the Plant Disease Recognition System 🌿🔍")
+    st.write("Upload an image to identify plant diseases efficiently and accurately.")
 st.markdown(
     """
     <style>
@@ -9,11 +17,21 @@ st.markdown(
             background-color: #4CAF50; /* Change button color */
             color: white; /* Text color */
             border: 2px solid white; /* White border */
+            font-size: 15px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+
         }
         .stButton>button:hover {
             background-color: blue;  /* Change color to blue on hover */
             color: white;
             border: 2px solid white;
+            
+        .stButton>button:active {
+        background-color: red; /* Change color after clicking */
+        color: white;
+        border: 2px solid white;
         }
     </style>
     """,
@@ -36,15 +54,16 @@ app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recogniti
 
 #Main Page
 if(app_mode=="Home"):
-    st.header("PLANT DISEASE RECOGNITION SYSTEM")
-    image_path = "home_page.jpeg"
-    st.image(image_path,use_column_width=True)
-    st.markdown("""
-    Welcome to the Plant Disease Recognition System! 🌿🔍
+    # st.header("PLANT DISEASE RECOGNITION SYSTEM")
+    # image_path = "home_page.jpeg"
+    # st.image(image_path,use_column_width=True)
+#     st.markdown("""Welcome to the Plant Disease Recognition System! 🌿🔍
     
-    Our mission is to help in identifying plant diseases efficiently. Upload an image of a plant, and our system will analyze it to detect any signs of diseases. Together, let's protect our crops and ensure a healthier harvest!
-
-    ### How It Works
+#     Our mission is to help in identifying plant diseases efficiently. Upload an image of a plant, and our system will analyze it to detect any signs of diseases. Together, let's protect our crops and ensure a healthier harvest!
+# """)
+    st.markdown("""
+    
+    ### How It Works:
     1. **Upload Image:** Go to the **Disease Recognition** page and upload an image of a plant with suspected diseases.
     2. **Analysis:** Our system will process the image using advanced algorithms to identify potential diseases.
     3. **Results:** View the results and recommendations for further action.
@@ -81,7 +100,7 @@ elif(app_mode=="Disease Recognition"):
     st.header("Disease Recognition")
     test_image = st.file_uploader("Choose an Image:")
     if(st.button("Show Image")):
-        st.image(test_image,width=4,use_column_width=True)
+        st.image(test_image,width=4,use_container_width=True)
     #Predict button
     if(st.button("Predict")):
         st.snow()
