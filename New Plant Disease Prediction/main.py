@@ -2,6 +2,24 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
+st.markdown(
+    """
+    <style>
+        .stButton>button {
+            background-color: #4CAF50; /* Change button color */
+            color: white; /* Text color */
+            border: 2px solid white; /* White border */
+        }
+        .stButton>button:hover {
+            background-color: blue;  /* Change color to blue on hover */
+            color: white;
+            border: 2px solid white;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 #Tensorflow Model Prediction
 def model_prediction(test_image):
